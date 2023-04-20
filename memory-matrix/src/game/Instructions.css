@@ -1,0 +1,8 @@
+/* justificamos el texto del parrafo */
+p {
+    text-align: left;
+  }
+
+li {
+    text-align: left;
+}
