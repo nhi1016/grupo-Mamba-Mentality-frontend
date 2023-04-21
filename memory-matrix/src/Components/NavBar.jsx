@@ -20,7 +20,9 @@ export default function NavBar() {
                 <a href="/about-us" className="rutas">Sobre nosotros</a>
             </li>
             <li>
-            <a href="/" className="rutas">Salir</a>
+                <a href="/login" className="rutas">Iniciar Seción</a>
+                <a href="/signup" className="rutas">Registrate</a>
+                <a href="/" className="rutas">Salir</a>
             </li>
         </ul>
         </>
