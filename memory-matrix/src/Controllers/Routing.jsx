@@ -1,12 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import App_old from './App_old'
-
-import App from './App'
-import Instructions from '../game/Instructions'
+import App from '../Views/App'
+import Instructions from '../Views/Instructions'
 import AboutUs from '../Components/AboutUs'
-import Login from '../game/Login'
-import Signup from '../game/signup'
+import Login from '../Views/Login'
+import Signup from '../Views/Signup'
 
 function Routing(){
     return (
