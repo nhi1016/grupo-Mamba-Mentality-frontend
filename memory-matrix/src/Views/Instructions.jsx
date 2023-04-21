@@ -1,8 +1,10 @@
+import NavBar from '../Components/NavBar'
 import '../Styles/Instructions.css'
 
 function Instructions() {
     return(
         <>
+        <NavBar/>
         <h1>Instrucciones</h1>
         <p> Descripción general <br></br><br></br>
 
