@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
+import App_old from './App_old'
 import './index.css'
 import UserWelcome from '../profile/UserWelcome'
 import Routing from './Routing'

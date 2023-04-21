@@ -1,0 +1,16 @@
+.list-header {
+    list-style: none;
+    background-color: rgba(114, 1, 1, 0.581);
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icono {
+    width: 50px;
+    border-radius: 50%;
+}
+.rutas {
+    color: black;
+}
