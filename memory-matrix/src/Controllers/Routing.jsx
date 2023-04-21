@@ -14,7 +14,6 @@ function Routing(){
                 <Route path={'/'} element={<App/>}/>
                 <Route path={'/instructions'} element={<Instructions/>}/>
                 <Route path={'/about-us'} element={<AboutUs/>}/>
-                <Route path={'/'} element={<App/>}/>
                 <Route path={'/login'} element={<Login/>}/>
                 <Route path={'/signup'} element={<Signup/>}/>
             </Routes>
