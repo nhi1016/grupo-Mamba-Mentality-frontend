@@ -29,7 +29,8 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <a href='/welcome'>Ir a User Welcome</a>
-      <a href='/instructions'>Ir a Instructions</a>      
+      <a href='/instructions'>Ir a Instructions</a>
+      <a href='/signup'>Ir a Signup</a>      
     </div>
   )
 }
