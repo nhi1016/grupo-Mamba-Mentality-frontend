@@ -20,7 +20,7 @@
 
   + En la barra de navegacón aparecen 3 opciones referentes a la seción, `Iniciar Sesión`, `Registrate` y `Salir`, sin embargo, en la página final solo deben salir cuando el usuario haya iniciado sesión. Mientras tanto se deja así a la espera de crear el Backend y su base de datos.
 
-  + Para el desarrollo de todos los códigos se utilizaron fuentes como `https://www.w3schools.com/css/css_howto.asp`, `ChatGPT`, `https://developer.mozilla.org/en-US/docs/Web/CSS` como complemento y ayuda para poder definir ciertos objetos, y así poder crear a nuestro propio gusto el desarrollo de la página web. Además, la fuente se sacó de `www.cdnfonts.com`
+  + Para el desarrollo de todos los códigos se utilizaron fuentes como `https://www.w3schools.com/css/css_howto.asp`, `ChatGPT`, `https://developer.mozilla.org/en-US/docs/Web/CSS` como complemento y ayuda para poder definir ciertos objetos, y así poder crear a nuestro propio gusto el desarrollo de la página web. Además, la fuente se sacó de `www.cdnfonts.com`.
 
   + El diseño del Mock Up se hizo mediante la aplicación web `Figma` y se puede ver a través del siguiente link:
-  `https://www.figma.com/file/6vZo3cPPTGQre1crsDrtkC/Mock-Up---E1-Web?node-id=0%3A1&t=9txKoXhe1MppImpL-1`
+  `https://www.figma.com/file/6vZo3cPPTGQre1crsDrtkC/Mock-Up---E1-Web?node-id=0%3A1&t=9txKoXhe1MppImpL-1`.
