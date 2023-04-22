@@ -24,3 +24,7 @@
 
   + El diseño del Mock Up se hizo mediante la aplicación web `Figma` y se puede ver a través del siguiente link:
   `https://www.figma.com/file/6vZo3cPPTGQre1crsDrtkC/Mock-Up---E1-Web?node-id=0%3A1&t=9txKoXhe1MppImpL-1`.
+  
+  + El modelo E/R se podrá observar a continuación:
+    
+  ![image](https://user-images.githubusercontent.com/89226951/233752101-a2f614ba-2c6d-4d16-9de2-f471803e79c4.png)
