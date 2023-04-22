@@ -34,19 +34,19 @@ input {
     border-radius: 0.25rem;
     border: 1px solid #ccc;
 }
-  
-button {
+
+.boton-login {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border-radius: 0.25rem;
     background-color: #1c8adb;
-    color: black;
+    color: rgb(255, 255, 255);
     border: none;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
 }
-  
-button:hover {
+
+.boton-login:hover {
     background-color: #0e6eb8;
 }

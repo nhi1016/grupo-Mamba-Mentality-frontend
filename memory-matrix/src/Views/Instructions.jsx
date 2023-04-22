@@ -5,6 +5,7 @@ function Instructions() {
     return(
         <>
         <NavBar/>
+        <div className="container-instructions">
         <h1>Instrucciones</h1>
         <p> Descripción general <br></br><br></br>
 
@@ -66,6 +67,7 @@ function Instructions() {
                 Recuperar la partida desde el punto en que quedó guardada. 
             </li>
             </ul>
+        </div>
         </>
     )
 }

@@ -1,16 +1,26 @@
 .list-header {
     list-style: none;
-    background-color: rgba(114, 1, 1, 0.581);
+    background-color: rgba(130, 33, 0, 0.859);
     display: flex;
     /* flex-direction: row; */
     justify-content: space-between;
     align-items: center;
+
+    font-size: large;
+    color: azure;
+
+    height: 15vh;
+    padding: 0.5%;
+
+    border-radius: 40px;
 }
 
+
 .icono {
-    width: 50px;
-    border-radius: 50%;
+    width: 70px;
+    border-radius: 20%;
 }
 .rutas {
-    color: black;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
 }

@@ -37,7 +37,10 @@ function Signup() {
             required
           />
         </label>
-        <button type="submit">Registrarse</button>
+        {/* <button type="submit">Registrarse</button> */}
+        <a href="/">
+          <div className="boton-signup">Registrate</div>
+        </a>
       </form>
     </div>
   );

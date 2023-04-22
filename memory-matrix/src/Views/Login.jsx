@@ -8,10 +8,14 @@ function Login() {
   function handleSubmit(event) {
     event.preventDefault();
   }
+  function handleClick(event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
 
   return (
     <div className="login-container">
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Iniciar sesión</h2>
         <label>
           Correo electrónico:
@@ -31,7 +35,10 @@ function Login() {
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <a href="/">
+          {/* <button type="submit" onClick={handleClick}>Log In</button> */}
+          <div className="boton-login">Log In</div>
+        </a>
       </form>
     </div>
   );
