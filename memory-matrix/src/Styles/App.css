@@ -1,0 +1,59 @@
+#root {
+    padding: 0px;
+    margin: 0px;
+    max-width: 100%;
+    text-align: center;
+    background-color: #e4ce91;
+    
+}
+
+.app {
+    background-image: url('../assets/fondo.png');
+    background-repeat: no-repeat, repeat;
+    background-size: 70%;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mensaje-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50px;
+    color: white;
+    height: 60vh;
+    padding: 5%;
+}
+
+.body-container {
+    text-align: center;
+    padding: 5%;
+    padding-top: 1%;
+    
+}
+  
+.body-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+  
+.body-container p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+  
+.play-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+  
+.play-button:hover {
+    background-color: #0062cc;
+}
+  
