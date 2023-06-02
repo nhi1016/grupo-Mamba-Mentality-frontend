@@ -1,7 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import '../Styles/Board.css';
 
 const Board = () => {
+  const cardImages = [
+    '../assets/1.png',
+    '../assets/3.png',
+    '../assets/5.png',
+    '../assets/7.png',
+    '../assets/9.png',
+    '../assets/11.png',
+    '../assets/13.png',
+    '../assets/15.png'
+  ];
+
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    const shuffledImages = [...cardImages, ...cardImages].sort(() => Math.random() - 0.5);
+    setCards(shuffledImages);
+  }, []);
+
   return (
     <div className="board">
       <div className="header">
@@ -18,8 +36,10 @@ const Board = () => {
         </div>
       </div>
       <div className="cards">
-        {[...Array(16)].map((_, index) => (
-          <div key={index} className="card"></div>
+        {cards.map((image, index) => (
+          <div key={index} className="card">
+            <img src={image} alt="Card" />
+          </div>
         ))}
       </div>
     </div>
