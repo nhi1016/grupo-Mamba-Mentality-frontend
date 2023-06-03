@@ -1,5 +1,5 @@
 .board {
-  background-color: #000;
+  background-color: #a35e5e;
   color: #fff;
   width: 100vw;
   height: 100vh;
@@ -54,6 +54,14 @@
 .cards .card {
   background-color: #fff;
   border: 1px solid #fff;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards .card img {
+  max-width: 100%;
+  max-height: 100%;
 }
