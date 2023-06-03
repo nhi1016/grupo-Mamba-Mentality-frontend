@@ -6,6 +6,16 @@ p {
     text-align: left;
   }
 
+  .instruction-title {
+    cursor: grab;
+  }
+.instruction-title:hover {
+  color: rgb(255, 255, 255);
+}
+.instruction-title:active {
+  cursor: grabbing;
+}
+
 li {
     text-align: left;
 }

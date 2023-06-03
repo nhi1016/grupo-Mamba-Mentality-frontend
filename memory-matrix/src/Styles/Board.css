@@ -1,0 +1,67 @@
+.board {
+  background-color: #a35e5e;
+  color: #fff;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.username {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.timer {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.lives {
+  margin-right: 10px;
+}
+
+.lives span {
+  font-weight: bold;
+}
+
+.buttons button {
+  margin-left: 10px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  height: calc(100% - 60px);
+}
+
+.cards .card {
+  background-color: #fff;
+  border: 1px solid #fff;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards .card img {
+  max-width: 100%;
+  max-height: 100%;
+}
