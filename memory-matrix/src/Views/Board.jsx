@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../Styles/Board.css';
-import Card from '/Card.jsx';
+import Card from './Card.jsx';
 
 const Board = () => {
   const [cards, setCards] = useState([]);
