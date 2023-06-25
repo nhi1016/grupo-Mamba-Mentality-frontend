@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../Styles/Board.css';
+import Card from '/Card.jsx';
 
 const Board = () => {
   const [cards, setCards] = useState([]);
@@ -45,9 +46,7 @@ const Board = () => {
       </div>
       <div className="cards">
         {cards.map((image, index) => (
-          <div key={index} className="card">
-            <img src={image} alt="Card" />
-          </div>
+          <Card key={index} image={image} />
         ))}
       </div>
     </div>
@@ -55,6 +54,7 @@ const Board = () => {
 };
 
 export default Board;
+
 
 
 // import React, { useState, useEffect } from 'react';
