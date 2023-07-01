@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
 import '../Styles/Board.css';
+import React, { createContext, useState, useEffect } from 'react';
 import Card from './Card.jsx';
 import BoardButton from '../Components/BoardButton.jsx';
+
+export const GameContext = createContext(null);
 
 const Board = () => {
   const [cards, setCards] = useState([]);
