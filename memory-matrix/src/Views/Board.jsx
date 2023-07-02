@@ -2,6 +2,8 @@ import '../Styles/Board.css';
 import React, { createContext, useState, useEffect } from 'react';
 import Card from './Card.jsx';
 import BoardButton from '../Components/BoardButton.jsx';
+import Bonus from '../Components/Bonus';
+import Opsiones from '../Components/Opsiones';
 
 export const GameContext = createContext(null);
 
@@ -41,6 +43,18 @@ const Board = () => {
     return () => clearInterval(interval);
   }, []);
 
+
+  // Manejador de ventana emergente de Bonus
+  const [visibleBonus, setVisibleBonus] = useState('oculto');
+  const [visibleOptions, setVisibleOptions] = useState('oculto');
+
+  const handleBonus = () => {
+    visibleBonus == 'oculto' ? setVisibleBonus('') : setVisibleBonus('oculto')
+  };
+
+  const handleOptions = () => {
+    setVisibleOptions('');
+
   const formatTime = (duration) => {
     let minutes = Math.floor(duration / 60);
     let seconds = duration % 60;
@@ -49,9 +63,28 @@ const Board = () => {
     seconds = seconds.toString().padStart(2, '0');
 
     return `${minutes}:${seconds}`;
+
   };
 
   return (
+    <>
+    <Bonus tipos={[
+      {
+        id: 1,
+        tipo: "Transparencia",
+      },
+      {
+        id: 2,
+        tipo: "Pista",
+      },
+      {
+      id: 3,
+      tipo: "Descripción",
+      }
+    ]} visible={visibleBonus} handleVista={setVisibleBonus} />
+
+    <Opsiones visible={visibleOptions} handleVista={setVisibleOptions}/>
+    
     <div className="board">
       <div className="header">
         <div className="username">{username}</div>
@@ -68,12 +101,13 @@ const Board = () => {
             <span>Vidas:</span> {lives}
           </div>
           <div className="buttons">
-            <button className="bonus-button">Bonus</button>
-            <button className="options-button">Opciones</button>
+            <button className="bonus-button" onClick={handleBonus}>Bonus</button>
+            <button className="options-button" onClick={handleOptions}>Opciones</button>
           </div>
         </div>
       </div>
     </div>
+    </>
   );
 };
 
