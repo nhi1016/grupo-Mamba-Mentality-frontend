@@ -6,6 +6,7 @@ import AboutUs from '../Components/AboutUs'
 import Login from '../Views/Login'
 import Signup from '../Views/Signup'
 import Board from '../Views/Board'
+import BoardButton from '../Components/BoardButton'
 
 function Routing(){
     return (
@@ -18,6 +19,7 @@ function Routing(){
                 <Route path={'/login'} element={<Login/>}/>
                 <Route path={'/signup'} element={<Signup/>}/>
                 <Route path={'/board'} element={<Board/>}/>
+                <Route path={'/boardbutton'} element={<BoardButton/>}/>
             </Routes>
         </BrowserRouter>
         </>
