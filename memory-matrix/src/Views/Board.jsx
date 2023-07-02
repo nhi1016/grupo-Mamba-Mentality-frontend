@@ -45,9 +45,8 @@ const Board = () => {
             <span>Vidas:</span> {lives}
           </div>
           <div className="buttons">
-            <button className="transparency-button">Transparencia</button>
-            <button className="description-button">Descripción</button>
-            <button className="hint-button">Pista</button>
+            <button className="bonus-button">Bonus</button>
+            <button className="options-button">Opciones</button>
           </div>
         </div>
       </div>
