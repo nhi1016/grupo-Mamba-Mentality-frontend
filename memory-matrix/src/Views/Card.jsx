@@ -9,10 +9,10 @@ const Card = ({ image }) => {
   };
 
   return (
-    <div className={`card ${flipped ? 'flipped' : ''}`} onClick={handleClick}>
-      <div className="card-inner">
+    <div className="card" onClick={handleClick}>
+      <div className={`card-inner ${flipped ? 'flipped' : ''}`}>
         <div className="card-front">
-          <img src="https://perrosexpertos.com/wp-content/uploads/2018/11/Imagenes-de-perros-05.jpg" alt="Card" />
+          <span>?</span>
         </div>
         <div className="card-back">
           <img src={image} alt="Card" />
