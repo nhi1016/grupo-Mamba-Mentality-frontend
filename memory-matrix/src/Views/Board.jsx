@@ -6,10 +6,17 @@ import BoardButton from '../Components/BoardButton.jsx';
 export const GameContext = createContext(null);
 
 const Board = () => {
-  const [cards, setCards] = useState([]);
-  const [username, setUsername] = useState('');
-  const [timer, setTimer] = useState('');
-  const [lives, setLives] = useState('');
+  const [cards, setCards] = useState(['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2KFvIXif18Hz2_QYDKl0onsBQRG3V_bvc6P-clxI&s',
+  'https://images.vexels.com/media/users/3/139441/isolated/lists/b779109e8e69df289e6629fc7a72f0ee-vista-lateral-de-carreras-de-autos-de-carrera.png',
+  'https://lh3.googleusercontent.com/4M4aeaq4LQwNoL7BkfnGD_BDQCUuVA2JWYXqEtuRbTnMK1kVgJcbE1KcPjHo-fDPHg',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSr8sYvQp5voAP7tkM9JBu1gktsc-nZ2XYqw&usqp=CAU',
+  'https://bahcoherramientas.pe/wp-content/uploads/2019/10/FS.1.png',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtufwqeSCpRC9yFlpdYyhjMG5VCn0XaJ5ilg&usqp=CAU',
+  'https://img.freepik.com/fotos-premium/estadio-futbol-renderizado-3d-estadio-futbol-arena-campo-lleno-gente_3544-1361.jpg',
+  'https://www.cic.cl/on/demandware.static/-/Sites-CIC_CL-Library/es_CL/dw444e61e7/categorias-landing/camas/categoria-camas-01.jpg' ]);
+  const [username, setUsername] = useState('Robertin123');
+  const [timer, setTimer] = useState('10:00 minutos');
+  const [lives, setLives] = useState('4 vidas');
 
   useEffect(() => {
     const fetchBoardData = async () => {
