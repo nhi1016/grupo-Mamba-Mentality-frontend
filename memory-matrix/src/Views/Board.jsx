@@ -77,23 +77,23 @@ const Board = () => {
         return response.json();
       })
       .then((data) => {
-        setUsername(data.usuario.nickname);
-        setLives(data.partida.vidas);
-        setTiempoRestante(+data.partida.tiempo_restante);
-        const listaBonusFetch = [];
+        setUsername(data.usuario.nickname)
+        setLives(data.partida.vidas)
+        const listaBonusFetch = []
         data.tablero.bonus.map((bonus) => {
           listaBonusFetch.push({
             id: bonus.id,
             tipo: bonus.tipo,
             descripsion: bonus.descripsion,
           })
-        });
+        })
         setListaBonus(listaBonusFetch)
-        const listaImagenes = [];
+        const listaImagenes = []
         data.tablero.imagenes.map((img) => {
           listaImagenes.push(img.imagen)
         })
         setCards(listaImagenes);
+        setTiempoRestante(+data.partida.tiempo_restante)
       })
   }
   useEffect(() => {

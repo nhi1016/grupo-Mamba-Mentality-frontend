@@ -18,7 +18,10 @@ export default function Opsiones(props){
                 <h1> Abandonar </h1>
             </div>
             <div className='type-option' onClick={handleVistaOpsiones}>
-                <h1> Guardar partida </h1>
+                <h1> Guardar </h1>
+            </div>
+            <div className='type-option' onClick={handleVistaOpsiones}>
+                <h1> Volver </h1>
             </div>
         </div>
     </div>
