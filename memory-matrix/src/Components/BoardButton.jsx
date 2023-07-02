@@ -1,11 +1,12 @@
+import React from 'react';
 import '../Styles/BoardButton.css';
 
-export default function BoardButton({onClick, showImage}){
-  return(
-    <div>
-      <button onClick={onClick}>
-        {showImage ? "Ocultar" : "Mostrar"}
-      </button>
-    </div>
-  )
-}
+const BoardButton = ({ label, onClick }) => {
+  return (
+    <button className="board-button" onClick={onClick}>
+      {label}
+    </button>
+  );
+};
+
+export default BoardButton;
