@@ -2,6 +2,7 @@ import '../Styles/Board.css';
 import React, { createContext, useState, useEffect } from 'react';
 import Card from './Card.jsx';
 import BoardButton from '../Components/BoardButton.jsx';
+import Bonus from '../Components/Bonus';
 
 export const GameContext = createContext(null);
 
@@ -39,7 +40,29 @@ const Board = () => {
     fetchBoardData();
   }, []);
 
+  // Manejador de ventana emergente de Bonus
+  const [visibleBonus, setVisibleBonus] = useState('oculto');
+
+  const handleBonus = () => {
+    visibleBonus == 'oculto' ? setVisibleBonus('') : setVisibleBonus('oculto')
+  };
+
   return (
+    <>
+    <Bonus tipos={[
+      {
+        id: 1,
+        tipo: "Transparencia",
+      },
+      {
+        id: 2,
+        tipo: "Pista",
+      },
+      {
+      id: 3,
+      tipo: "Descripción",
+      }
+    ]} visible={visibleBonus} handleVista={setVisibleBonus} />
     <div className="board">
       <div className="header">
         <div className="username">{username}</div>
@@ -49,7 +72,7 @@ const Board = () => {
             <span>Vidas:</span> {lives}
           </div>
           <div className="buttons">
-            <button className="bonus-button">Bonus</button>
+            <button className="bonus-button" onClick={handleBonus}>Bonus</button>
             <button className="options-button">Opciones</button>
           </div>
         </div>
@@ -60,6 +83,7 @@ const Board = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 
