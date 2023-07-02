@@ -1,4 +1,4 @@
-.bonus-modal {
+.opsiones-modal {
     position: fixed;
     z-index: 999;
     top: 0;
@@ -12,25 +12,27 @@
     align-items: center;
 }
 
-.container-bonus {
-    width: 30vw;
-    height: 50vh;
-    background-color: rgba(154, 21, 14, 0.8);
+.container-options {
+    width: 50vw;
+    height: 30vh;
+    background-color: rgba(154, 14, 121, 0.8);
     border-radius: 50px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     padding: 2%;
 }
 
-.type-bonus {
-    background-color: rgba(40, 170, 40, 0.8);
-    width: 90%;
+.type-option {
+    background-color: rgba(64, 172, 64, 0.8);
+    width: 40%;
     max-height: 30%;
     margin: 2%;
     border-radius: 40px;
     display: flex;
+    flex-grow: 1;
     justify-content: center;
     align-items: center;
     color: black;

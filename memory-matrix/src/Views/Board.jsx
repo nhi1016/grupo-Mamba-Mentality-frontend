@@ -3,6 +3,7 @@ import React, { createContext, useState, useEffect } from 'react';
 import Card from './Card.jsx';
 import BoardButton from '../Components/BoardButton.jsx';
 import Bonus from '../Components/Bonus';
+import Opsiones from '../Components/Opsiones';
 
 export const GameContext = createContext(null);
 
@@ -42,9 +43,14 @@ const Board = () => {
 
   // Manejador de ventana emergente de Bonus
   const [visibleBonus, setVisibleBonus] = useState('oculto');
+  const [visibleOptions, setVisibleOptions] = useState('oculto');
 
   const handleBonus = () => {
     visibleBonus == 'oculto' ? setVisibleBonus('') : setVisibleBonus('oculto')
+  };
+
+  const handleOptions = () => {
+    setVisibleOptions('');
   };
 
   return (
@@ -63,6 +69,9 @@ const Board = () => {
       tipo: "Descripción",
       }
     ]} visible={visibleBonus} handleVista={setVisibleBonus} />
+
+    <Opsiones visible={visibleOptions} handleVista={setVisibleOptions}/>
+    
     <div className="board">
       <div className="header">
         <div className="username">{username}</div>
@@ -73,7 +82,7 @@ const Board = () => {
           </div>
           <div className="buttons">
             <button className="bonus-button" onClick={handleBonus}>Bonus</button>
-            <button className="options-button">Opciones</button>
+            <button className="options-button" onClick={handleOptions}>Opciones</button>
           </div>
         </div>
       </div>

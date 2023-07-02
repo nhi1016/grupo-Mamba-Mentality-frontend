@@ -8,17 +8,18 @@ export default function Bonus(props){
         props.handleVista('oculto');
     };
 
+    let listaBonus = [];
+    props.tipos.map((bonus, index) => {
+        listaBonus.push(
+            <div className='type-bonus' onClick={handleVistaBonus}>
+                <h1>{ bonus.tipo }</h1>
+            </div>
+        )
+    })
+
     return <div className={`bonus-modal ${props.visible}`}>
-            <div className="container">
-                <div className='type-bonus' onClick={handleVistaBonus}>
-                    <h1>{ props.tipos[0].tipo }</h1>
-                </div>
-                <div className='type-bonus' onClick={handleVistaBonus}>
-                    <h1>{ props.tipos[1].tipo }</h1>
-                </div>
-                <div className='type-bonus' onClick={handleVistaBonus}>
-                    <h1>{ props.tipos[2].tipo }</h1>
-                </div>
+            <div className="container-bonus">
+                {listaBonus}
             </div>
         </div>
 }
