@@ -8,7 +8,7 @@ export const GameContext = createContext(null);
 const Board = () => {
   const [cards, setCards] = useState([]);
   const [username, setUsername] = useState('Robertin123');
-  const [timer, setTimer] = useState('10:00 minutos');
+  const [timer, setTimer] = useState('00:00');
   const [lives, setLives] = useState('4');
 
   useEffect(() => {
@@ -27,6 +27,29 @@ const Board = () => {
     const shuffledImages = duplicatedImages.sort(() => Math.random() - 0.5);
     setCards(shuffledImages);
   }, []);
+
+  useEffect(() => {
+    let duration = 600; // Duración del temporizador en segundos
+    const interval = setInterval(() => {
+      setTimer(formatTime(duration));
+      duration--;
+      if (duration < 0) {
+        clearInterval(interval);
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const formatTime = (duration) => {
+    let minutes = Math.floor(duration / 60);
+    let seconds = duration % 60;
+
+    minutes = minutes.toString().padStart(2, '0');
+    seconds = seconds.toString().padStart(2, '0');
+
+    return `${minutes}:${seconds}`;
+  };
 
   return (
     <div className="board">
@@ -55,6 +78,7 @@ const Board = () => {
 };
 
 export default Board;
+
 
 
 

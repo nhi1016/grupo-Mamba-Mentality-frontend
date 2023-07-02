@@ -45,8 +45,14 @@
   margin-left: auto; /* Mueve el sector header-right hacia la derecha */
 }
 
+.timer {
+  color: #ffca6f;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-.timer,
+
 .lives {
   color: #ffca6f;
   padding: 10px;
