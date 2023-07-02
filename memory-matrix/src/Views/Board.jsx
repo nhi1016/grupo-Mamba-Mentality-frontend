@@ -32,27 +32,31 @@ const Board = () => {
     <div className="board">
       <div className="header">
         <div className="username">{username}</div>
+      </div>
+      <div className="board-content">
+        <div className="cards">
+          {cards.map((image, index) => (
+            <Card key={index} image={image} />
+          ))}
+        </div>
         <div className="header-right">
           <div className="timer">{timer}</div>
           <div className="lives">
             <span>Vidas:</span> {lives}
           </div>
           <div className="buttons">
-            <button className="bonus-button">Bonus</button>
-            <button className="options-button">Opciones</button>
+            <button className="transparency-button">Transparencia</button>
+            <button className="description-button">Descripción</button>
+            <button className="hint-button">Pista</button>
           </div>
         </div>
-      </div>
-      <div className="cards">
-        {cards.map((image, index) => (
-          <Card key={index} image={image} />
-        ))}
       </div>
     </div>
   );
 };
 
 export default Board;
+
 
 
 
