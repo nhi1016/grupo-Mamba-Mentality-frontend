@@ -12,29 +12,9 @@ const Board = () => {
   const [cards, setCards] = useState([])
   const [username, setUsername] = useState('Robertin123')
   const [timer, setTimer] = useState('00:00')
-  const [tiempoRestante, setTiempoRestante] = useState(0)
+  const [tiempoRestante, setTiempoRestante] = useState(600)
+  const [intervalo, setIntervalo] = useState(undefined)
   const [lives, setLives] = useState('5')
-
-  useEffect(() => {
-    let duration = tiempoRestante; // Duración del temporizador en segundos
-    const interval = setInterval(() => {
-      setTimer(formatTime(duration));
-      duration--;
-      if (duration < 0) {
-        clearInterval(interval);
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [])
-
-  const formatTime = (duration) => {
-    let minutes = Math.floor(duration / 60);
-    let seconds = duration % 60
-    minutes = minutes.toString().padStart(2, '0');
-    seconds = seconds.toString().padStart(2, '0');
-    return `${minutes}:${seconds}`
-  }
   
   // Manejador de ventana emergente de Bonus y Opsiones
   const [visibleBonus, setVisibleBonus] = useState('oculto')
@@ -50,7 +30,7 @@ const Board = () => {
   }
 
   // Fetch Data
-  const fetchData = () => {
+  const fetchData = async () => {
     const url = domain + '/newGame/FreeTrial';
     fetch(url, {
       method: 'GET',
@@ -86,17 +66,40 @@ const Board = () => {
         localStorage.setItem('user_id', data.usuario.id)
         localStorage.setItem('partida_id', data.partida.id)
         localStorage.setItem('tablero_id', data.tablero.id)
+        localStorage.setItem('vidas', +data.partida.vidas)
+        localStorage.setItem('img_selected', 0)
       })
     return
   }
+
+  const formatTime = (duration) => {
+    let minutes = Math.floor(duration / 60);
+    let seconds = duration % 60
+    minutes = minutes.toString().padStart(2, '0');
+    seconds = seconds.toString().padStart(2, '0');
+    return `${minutes}:${seconds}`
+  }
+
   useEffect(() => {
-    fetchData();
+    fetchData()
+    let duration = tiempoRestante; // Duración del temporizador en segundos
+    const interval = setInterval(() => {
+      setTimer(formatTime(duration));
+      duration--;
+      localStorage.setItem('tiempoRestante', duration)
+      if (duration < 0) {
+        clearInterval(interval);
+      }
+    }, 1000);
+    setIntervalo(interval);
+
+    // return () => clearInterval(interval);
   }, [])
 
   return <>
     <Bonus tipos={listaBonus} visible={visibleBonus} handleVista={setVisibleBonus} />
 
-    <Opsiones visible={visibleOptions} handleVista={setVisibleOptions}/>
+    <Opsiones visible={visibleOptions} handleVista={setVisibleOptions} interval={intervalo}/>
     
     <div className="board">
       <div className="header">
@@ -105,7 +108,7 @@ const Board = () => {
       <div className="board-content">
         <div className="cards">
           {cards.map((imagen, index) => (
-            <Card key={index} image={imagen.imagen} />
+            <Card key={index} identifier={imagen.id} image={imagen.imagen} setVidas={setLives} />
           ))}
         </div>
         <div className="header-right">

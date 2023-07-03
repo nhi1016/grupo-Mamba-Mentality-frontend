@@ -33,19 +33,33 @@ export default function Opsiones(props){
         }
     }
 
+    function pausa() {
+        alert('Todavía no está terminado');
+        clearInterval(props.interval)
+    }
+
+    function volver() {
+        alert('Todavía no está terminado');
+        props.interval()
+    }
+
+    function save() {
+        alert('Opsión no disponible')
+    }
+
     return (
     <div className={`opsiones-modal ${props.visible}`}>
         <div className="container-options" onClick={handleVistaOpsiones}>
-            <div className='type-option' >
+            <div className='type-option' onClick={pausa}>
                 <h1> Pausar </h1>
             </div>
             <div className='type-option' onClick={deleteGame}>
                 <h1> Abandonar </h1>
             </div>
-            <div className='type-option' >
+            <div className='type-option' onClick={save}>
                 <h1> Guardar </h1>
             </div>
-            <div className='type-option' >
+            <div className='type-option' onClick={volver}>
                 <h1> Volver </h1>
             </div>
         </div>
