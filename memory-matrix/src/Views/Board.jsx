@@ -68,6 +68,7 @@ const Board = () => {
         localStorage.setItem('tablero_id', data.tablero.id)
         localStorage.setItem('vidas', +data.partida.vidas)
         localStorage.setItem('img_selected', 0)
+        localStorage.setItem('imagenes', JSON.stringify({}))
       })
     return
   }
@@ -78,6 +79,19 @@ const Board = () => {
     minutes = minutes.toString().padStart(2, '0');
     seconds = seconds.toString().padStart(2, '0');
     return `${minutes}:${seconds}`
+  }
+
+  let tarjetas = []
+  let imagenes = {}
+  cards.map((imagen, index) => {
+    tarjetas.push(<Card key={index} identifier={imagen.id} image={imagen.imagen} setVidas={setLives} />)
+    // imagenes = JSON.parse(localStorage.getItem('imagenes'))
+    imagenes[imagen.id] = {
+      bloqueada: 0,
+    }
+  })
+  if (localStorage.getItem('imagenes') == '{}') {
+    localStorage.setItem('imagenes', JSON.stringify(imagenes))
   }
 
   useEffect(() => {
@@ -107,9 +121,7 @@ const Board = () => {
       </div>
       <div className="board-content">
         <div className="cards">
-          {cards.map((imagen, index) => (
-            <Card key={index} identifier={imagen.id} image={imagen.imagen} setVidas={setLives} />
-          ))}
+          {tarjetas}
         </div>
         <div className="header-right">
           <div className="timer">{timer}</div>
